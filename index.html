@@ -172,6 +172,138 @@
       transform: translateY(-1px);
     }
 
+    /* Featured Product */
+    .featured {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #0a1628 0%, #0f2440 50%, #0a1628 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 70% 50%, rgba(26, 115, 232, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .featured-label {
+      display: inline-block;
+      background: rgba(26, 115, 232, 0.15);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(26, 115, 232, 0.25);
+    }
+
+    .featured-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .featured-content h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+
+    .featured-content h2 span {
+      background: linear-gradient(135deg, #4da6ff, #1a73e8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .featured-tagline {
+      font-size: 1.25rem;
+      color: var(--gray-400);
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+    }
+
+    .featured-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+
+    .featured-feature {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .featured-feature h4 {
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .featured-feature h4 svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .featured-feature p {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .featured-cta {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(26, 115, 232, 0.3);
+    }
+
+    .featured-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(26, 115, 232, 0.4);
+    }
+
+    .featured-free {
+      display: block;
+      margin-top: 0.75rem;
+      color: var(--gray-400);
+      font-size: 0.85rem;
+    }
+
     /* Sections */
     section {
       padding: 5rem 2rem;
@@ -405,6 +537,7 @@
         <div class="logo-text">Huladyne <span>Labs</span></div>
       </a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#cronguard">CronGuard.ai</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#industries">Industries</a></li>
         <li><a href="#about">About</a></li>
@@ -422,6 +555,42 @@
       <h1>Research. Develop. <span>Deliver.</span></h1>
       <p>Huladyne Labs is an R&D consulting firm that builds products and delivers technology solutions across healthcare, financial services, and beyond.</p>
       <a href="#contact" class="hero-cta">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- Featured Product: CronGuard -->
+  <section class="featured" id="cronguard">
+    <div class="container">
+      <div class="featured-content">
+        <div class="featured-label">Latest from the Lab</div>
+        <h2><span>CronGuard.ai</span></h2>
+        <p class="featured-tagline">Intelligent monitoring for scheduled tasks and background jobs.<br>Detects failures before your users do.</p>
+        <div class="featured-features">
+          <div class="featured-feature">
+            <h4>
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              One-Line Setup
+            </h4>
+            <p>Add a single curl to your cron job. Works with any language, platform, or infrastructure. Monitoring in under 60 seconds.</p>
+          </div>
+          <div class="featured-feature">
+            <h4>
+              <svg viewBox="0 0 24 24"><path d="M18.36 5.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+              Smart Alerting
+            </h4>
+            <p>Adaptive thresholds learn your job's normal behavior. Cuts alert noise by 60-80% so you only hear about real problems.</p>
+          </div>
+          <div class="featured-feature">
+            <h4>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              AI Root Cause Diagnosis
+            </h4>
+            <p>When jobs fail, get actionable fixes — not just alerts. AI analyzes errors and tells you exactly what broke and how to fix it.</p>
+          </div>
+        </div>
+        <a href="https://cronguard.ai" target="_blank" rel="noopener" class="featured-cta">Start Monitoring — Free</a>
+        <span class="featured-free">Free tier includes 5 monitors, smart alerting, and AI diagnosis</span>
+      </div>
     </div>
   </section>
 
@@ -517,11 +686,11 @@
       <div class="contact-info">
         <div class="contact-item">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:info@huladyne.com">info@huladyne.com</a>
+          <a href="mailto:corporate@huladyne.com">corporate@huladyne.com</a>
         </div>
         <div class="contact-item">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <a href="https://www.linkedin.com/company/huladyne-labs-llc" target="_blank" rel="noopener">LinkedIn</a>
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <a href="https://www.facebook.com/huladyne" target="_blank" rel="noopener">Facebook</a>
         </div>
       </div>
     </div>
