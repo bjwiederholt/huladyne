@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:web.archive.org)",
+      "WebSearch",
+      "WebFetch(domain:www.facebook.com)",
+      "Bash(git rm:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo view:*)",
+      "Bash(sips:*)",
+      "WebFetch(domain:crondoctor.com)",
+      "Skill(humanizer)",
+      "Bash(gh release:*)",
+      "Bash(python3 -c \"\nimport json\nwith open\\('vercel.json'\\) as f:\n    json.load\\(f\\)\nprint\\('vercel.json is valid JSON'\\)\n\")",
+      "Bash(python3:*)",
+      "WebFetch(domain:www.joshwcomeau.com)",
+      "WebFetch(domain:bruno-simon.com)",
+      "WebFetch(domain:www.jhey.dev)"
+    ]
+  }
+}
