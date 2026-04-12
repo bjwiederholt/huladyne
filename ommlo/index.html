@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ommlo — Quiet tones for steady hands</title>
+  <meta name="description" content="Ommlo is a collection of quiet tones and noise textures for the moments when you want to feel calmer, steadier, or more focused. Free on the App Store.">
+  <meta property="og:title" content="Ommlo — Quiet tones for steady hands">
+  <meta property="og:description" content="Binaural tones, brown noise, pink noise, and quiet drones for sleep, focus, meditation, and the moments when your hands need steady.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.huladyne.com/ommlo">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 40px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .hero .subtitle {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #1e293b;
+      color: #4f6df5;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .app-store-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.8rem 2rem;
+      background: #4f6df5;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+    .app-store-btn:hover {
+      background: #3b5de7;
+    }
+    .free-note {
+      font-size: 0.85rem;
+      color: #475569;
+      margin-top: 0.6rem;
+    }
+
+    /* ── Screenshots ── */
+    .screenshots {
+      padding: 20px 20px 60px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .screenshots-inner {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .screenshots img {
+      width: 180px;
+      height: auto;
+      border-radius: 16px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    }
+    @media (max-width: 700px) {
+      .screenshots-inner {
+        justify-content: flex-start;
+        padding: 0 20px;
+      }
+      .screenshots img {
+        width: 150px;
+      }
+    }
+
+    /* ── Features ── */
+    .features {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+    .features h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .features p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      margin-top: 0.8rem;
+    }
+    .category-item {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    .category-item span {
+      color: #4f6df5;
+      font-weight: 500;
+    }
+    @media (max-width: 480px) {
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Privacy strip ── */
+    .privacy-strip {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #1e293b;
+      border-bottom: 1px solid #1e293b;
+    }
+    .privacy-strip p {
+      font-size: 1rem;
+      color: #94a3b8;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .disclaimer p {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px 20px 40px;
+    }
+    footer a {
+      color: #4f6df5;
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin: 0 12px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    footer .copyright {
+      font-size: 0.8rem;
+      color: #475569;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="badge">Free on the App Store</div>
+    <h1>Ommlo</h1>
+    <p class="subtitle">Quiet tones for steady hands</p>
+    <p class="tagline">A collection of quiet tones and noise textures for the moments when you want to feel calmer, steadier, or more focused.</p>
+    <a href="https://apps.apple.com/app/ommlo/id0000000000" class="app-store-btn">Download for iOS</a>
+    <p class="free-note">Free. No ads. No subscriptions. No tracking.</p>
+  </section>
+
+  <section class="screenshots">
+    <div class="screenshots-inner">
+      <img src="ommlo-screenshot-1-steady.png" alt="Ommlo Listen screen showing the Steady program" loading="lazy">
+      <img src="ommlo-screenshot-2-visualizer.png" alt="Ommlo visualizer during a session" loading="lazy">
+      <img src="ommlo-screenshot-3-browser.png" alt="Ommlo preset browser showing all categories" loading="lazy">
+      <img src="ommlo-screenshot-4-journal.png" alt="Ommlo journal with logged sessions and rhythm chart" loading="lazy">
+      <img src="ommlo-screenshot-5-warmmask.png" alt="Ommlo Listen screen showing the Warm Mask preset" loading="lazy">
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>24 sound presets</h2>
+    <p>Eight categories, each tuned for a different need.</p>
+    <div class="category-grid">
+      <div class="category-item"><span>Calm Hands</span> — alpha tones and steady drones</div>
+      <div class="category-item"><span>Comfort</span> — brown noise, pink noise, soft textures</div>
+      <div class="category-item"><span>Anxiety &amp; Calm</span> — gentle tones and drifts</div>
+      <div class="category-item"><span>Sleep</span> — slow, quiet drones and noise blankets</div>
+      <div class="category-item"><span>Focus</span> — steady tones for working sessions</div>
+      <div class="category-item"><span>Meditation</span> — slow tones for sitting practice</div>
+      <div class="category-item"><span>Pain</span> — masking sounds for discomfort</div>
+      <div class="category-item"><span>Tinnitus</span> — white and pink noise generators</div>
+    </div>
+
+    <h2>7 timed programs</h2>
+    <p>Sessions from 5 to 30 minutes that fade in, sustain, and fade out on their own. Press Start and close your eyes.</p>
+
+    <h2>Journal</h2>
+    <p>Sessions of two minutes or more are logged automatically. A simple three-state check-in lets you track what works for you over time. A 30-day rhythm chart shows your practice at a glance.</p>
+
+    <h2>Lab Mode</h2>
+    <p>For the curious: a full sound design toolkit. Waveform, frequency, binaural offset, noise mix, envelope, drift, randomness. Design your own patterns and save them.</p>
+
+    <h2>Headphones recommended</h2>
+    <p>Binaural beats require headphones. The left and right ears receive slightly different frequencies, and your brain perceives the difference as a gentle beat. Other presets work with speakers too.</p>
+  </section>
+
+  <section class="privacy-strip">
+    <p>No ads. No tracking. No accounts. No subscriptions. No data leaves your device. Ever.</p>
+  </section>
+
+  <section class="disclaimer">
+    <p>Ommlo is not a medical device. It is not FDA-approved. It does not diagnose, treat, cure, or prevent any disease or condition. The sounds in this app are for personal exploration and general wellness. If you have a medical condition, please talk to a healthcare provider.</p>
+  </section>
+
+  <footer>
+    <a href="/ommlo/support">Support</a>
+    <a href="/ommlo/privacy">Privacy Policy</a>
+    <div class="copyright">&copy; 2026 Huladyne Labs, LLC</div>
+  </footer>
+
+</body>
+</html>
