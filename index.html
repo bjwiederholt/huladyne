@@ -45,6 +45,10 @@
       --cd-light: #2dd4bf;
       --cd-muted: rgba(13, 148, 136, 0.08);
       --cd-surface: #f0fdfa;
+      --om: #7c3aed;
+      --om-light: #a78bfa;
+      --om-muted: rgba(124, 58, 237, 0.08);
+      --om-surface: #f5f3ff;
       --lab-glow: rgba(79, 109, 245, 0.15);
       --neon-blue: #00d4ff;
       --neon-purple: #a855f7;
@@ -661,6 +665,9 @@
     .lab-card--cd {
       animation: card-float 6s ease-in-out infinite -2s, card-glow-cd 4s ease-in-out infinite -1.5s;
     }
+    .lab-card--om {
+      animation: card-float 6s ease-in-out infinite -4s, card-glow-om 4s ease-in-out infinite -3s;
+    }
 
     @keyframes card-float {
       0%, 100% { transform: translateY(0px); }
@@ -677,6 +684,11 @@
       50% { box-shadow: 0 4px 30px rgba(13, 148, 136, 0.12), 0 0 60px rgba(13, 148, 136, 0.05); }
     }
 
+    @keyframes card-glow-om {
+      0%, 100% { box-shadow: 0 2px 20px rgba(124, 58, 237, 0); }
+      50% { box-shadow: 0 4px 30px rgba(124, 58, 237, 0.12), 0 0 60px rgba(124, 58, 237, 0.05); }
+    }
+
     /* Stamp flash on emerge */
     .lab-card {
       transition: box-shadow 0.6s ease;
@@ -691,6 +703,9 @@
     }
     #products .lab-card--cd:hover {
       box-shadow: 0 20px 60px rgba(13, 148, 136, 0.25), 0 0 40px rgba(13, 148, 136, 0.12);
+    }
+    #products .lab-card--om:hover {
+      box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25), 0 0 40px rgba(124, 58, 237, 0.12);
     }
 
     /* Factory hum vibration (Bruno) */
@@ -797,7 +812,7 @@
 
     .lab-cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 
@@ -816,6 +831,7 @@
 
     .lab-card--mr { border-top-color: var(--mr); }
     .lab-card--cd { border-top-color: var(--cd); }
+    .lab-card--om { border-top-color: var(--om); }
 
     .lab-card--mr:hover {
       box-shadow: 0 20px 60px rgba(217, 119, 6, 0.12);
@@ -825,6 +841,11 @@
     .lab-card--cd:hover {
       box-shadow: 0 20px 60px rgba(13, 148, 136, 0.12);
       background: var(--cd-surface);
+    }
+
+    .lab-card--om:hover {
+      box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
+      background: var(--om-surface);
     }
 
     .lab-card__badge {
@@ -876,6 +897,11 @@
       50% { opacity: 0.4; }
     }
 
+    .lab-card--om .lab-card__badge {
+      background: var(--om-muted);
+      color: var(--om);
+    }
+
     .lab-card__icon {
       width: 56px;
       height: 56px;
@@ -894,6 +920,7 @@
 
     .lab-card--mr .lab-card__icon { background: var(--mr-muted); }
     .lab-card--cd .lab-card__icon { background: var(--cd-muted); }
+    .lab-card--om .lab-card__icon { background: var(--om-muted); }
 
     .lab-card__icon svg {
       width: 28px;
@@ -906,6 +933,7 @@
 
     .lab-card--mr .lab-card__icon svg { stroke: var(--mr); }
     .lab-card--cd .lab-card__icon svg { stroke: var(--cd); }
+    .lab-card--om .lab-card__icon svg { stroke: var(--om); }
 
     .lab-card h3 {
       font-size: 1.4rem;
@@ -954,6 +982,7 @@
 
     .lab-card--mr .lab-card__chip { background: var(--mr-muted); color: var(--mr); }
     .lab-card--cd .lab-card__chip { background: var(--cd-muted); color: var(--cd); }
+    .lab-card--om .lab-card__chip { background: var(--om-muted); color: var(--om); }
 
     .lab-card__cta {
       font-weight: 600;
@@ -966,6 +995,7 @@
 
     .lab-card--mr .lab-card__cta { color: var(--mr); }
     .lab-card--cd .lab-card__cta { color: var(--cd); }
+    .lab-card--om .lab-card__cta { color: var(--om); }
 
     .lab-card__cta svg {
       width: 16px;
@@ -1389,6 +1419,10 @@
     /* ============================================
        15. MOBILE
        ============================================ */
+    @media (max-width: 960px) {
+      .lab-cards { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .mobile-toggle { display: block; }
@@ -1646,6 +1680,22 @@
         <p>Things we built because we needed them. Turns out other people did too.</p>
       </div>
       <div class="lab-cards reveal-stagger">
+        <a href="/ommlo" target="_blank" rel="noopener" class="lab-card lab-card--om reveal" aria-label="Ommlo — Download for iOS">
+          <div class="card-gloss"></div>
+          <span class="lab-card__badge">Free on iOS</span>
+          <div class="lab-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 6v12"/><path d="M8 8v8"/><path d="M16 8v8"/><path d="M4 11v2"/><path d="M20 11v2"/></svg>
+          </div>
+          <h3>Ommlo</h3>
+          <p class="lab-card__tagline">Quiet tones for steady hands</p>
+          <p class="lab-card__desc">A collection of quiet tones and noise textures for the moments when you want to feel calmer, steadier, or more focused. 24 presets, timed programs, a session journal, and a full sound design lab. Free, no ads, no tracking.</p>
+          <div class="lab-card__chips">
+            <span class="lab-card__chip">Sound Presets</span>
+            <span class="lab-card__chip">Session Journal</span>
+            <span class="lab-card__chip">Lab Mode</span>
+          </div>
+          <span class="lab-card__cta">Download for iOS <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
         <a href="https://makersreward.com" target="_blank" rel="noopener" class="lab-card lab-card--mr reveal" aria-label="MakersReward — Join the waitlist">
           <div class="card-gloss"></div>
           <span class="lab-card__badge">Coming Soon</span>
