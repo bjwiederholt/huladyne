@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Game Lab — Puzzle Games from Huladyne Labs</title>
+  <meta name="description" content="Daily puzzle games from the lab. Free, no ads, no accounts.">
+  <link rel="canonical" href="https://huladyne.com/gamelab">
+  <meta property="og:title" content="The Game Lab — Puzzle Games from Huladyne Labs">
+  <meta property="og:description" content="Daily puzzle games from the lab. Free, no ads, no accounts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://huladyne.com/gamelab">
+  <meta property="og:image" content="https://huladyne.com/og-image.png">
+  <meta property="og:site_name" content="Huladyne Labs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Game Lab — Puzzle Games from Huladyne Labs">
+  <meta name="twitter:description" content="Daily puzzle games from the lab. Free, no ads, no accounts.">
+  <meta name="twitter:image" content="https://huladyne.com/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 24px 20px 0;
+    }
+
+    .site-header img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      opacity: 0.8;
+    }
+
+    .site-header span {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 48px 20px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* ── Game Cards ── */
+    .games {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .game-card {
+      display: block;
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 1.75rem;
+      border-top: 4px solid #64748b;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      position: relative;
+    }
+
+    .game-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .game-card--signal { border-top-color: #00d4ff; }
+    .game-card--signal:hover { box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+
+    .game-card--fuse { border-top-color: #f59e0b; }
+    .game-card--fuse:hover { box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15); }
+
+    .game-card__name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .game-card--signal .game-card__name { color: #00d4ff; }
+    .game-card--fuse .game-card__name { color: #f59e0b; }
+
+    .game-card__desc {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 0.75rem;
+    }
+
+    .game-card__status {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px 20px 40px;
+    }
+
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #94a3b8;
+    }
+
+    footer .made-by {
+      font-size: 0.8rem;
+      color: #475569;
+      margin-top: 0.75rem;
+    }
+
+    /* ── Reduced Motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .game-card {
+        transition: none;
+      }
+    }
+  </style>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageviewId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_qFE68PFJyqK6HNWS3zgWScgKWgVPPS3RkLvzmVrAcDYU', {api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only'});
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <img src="/HD_robot.png" alt="" aria-hidden="true">
+    <span>Huladyne Labs</span>
+  </header>
+
+  <section class="hero">
+    <h1>The Game Lab</h1>
+    <p>Daily puzzles from the lab. Pick one, solve it, tell your friends you're smarter than them.</p>
+  </section>
+
+  <section class="games">
+    <a href="#" class="game-card game-card--signal">
+      <div class="game-card__name">Signal</div>
+      <p class="game-card__desc">Find the hidden words. Trace the signal.</p>
+      <div class="game-card__status">Coming soon</div>
+    </a>
+    <a href="#" class="game-card game-card--fuse">
+      <div class="game-card__name">Fuse</div>
+      <p class="game-card__desc">Tap. Chain. React. Clear the board.</p>
+      <div class="game-card__status">Coming soon</div>
+    </a>
+  </section>
+
+  <footer>
+    <a href="https://huladyne.com">A Huladyne Labs thing.</a>
+    <div class="made-by">&copy; 2026 Huladyne Labs</div>
+  </footer>
+
+</body>
+</html>
