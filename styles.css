@@ -27,6 +27,10 @@
       --om-light: #a78bfa;
       --om-muted: rgba(124, 58, 237, 0.08);
       --om-surface: #f5f3ff;
+      --gl: #f43f5e;
+      --gl-light: #fb7185;
+      --gl-muted: rgba(244, 63, 94, 0.08);
+      --gl-surface: #fff1f2;
       --lab-glow: rgba(79, 109, 245, 0.15);
       --neon-blue: #00d4ff;
       --neon-purple: #a855f7;
@@ -647,6 +651,9 @@
     .lab-card--om {
       animation: card-float 6s ease-in-out infinite -4s, card-glow-om 4s ease-in-out infinite -3s;
     }
+    .lab-card--gl {
+      animation: card-float 6s ease-in-out infinite -1s, card-glow-gl 4s ease-in-out infinite -0.5s;
+    }
 
     @keyframes card-float {
       0%, 100% { transform: translateY(0px); }
@@ -668,6 +675,11 @@
       50% { box-shadow: 0 4px 30px rgba(124, 58, 237, 0.12), 0 0 60px rgba(124, 58, 237, 0.05); }
     }
 
+    @keyframes card-glow-gl {
+      0%, 100% { box-shadow: 0 2px 20px rgba(244, 63, 94, 0); }
+      50% { box-shadow: 0 4px 30px rgba(244, 63, 94, 0.12), 0 0 60px rgba(244, 63, 94, 0.05); }
+    }
+
     /* Stamp flash on emerge */
     .lab-card {
       transition: box-shadow 0.6s ease;
@@ -685,6 +697,9 @@
     }
     #products .lab-card--om:hover {
       box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25), 0 0 40px rgba(124, 58, 237, 0.12);
+    }
+    #products .lab-card--gl:hover {
+      box-shadow: 0 20px 60px rgba(244, 63, 94, 0.25), 0 0 40px rgba(244, 63, 94, 0.12);
     }
 
     /* Stamp screen-shake on card emerge (Bruno) */
@@ -789,6 +804,7 @@
     .lab-card--mr { border-top-color: var(--mr); }
     .lab-card--cd { border-top-color: var(--cd); }
     .lab-card--om { border-top-color: var(--om); }
+    .lab-card--gl { border-top-color: var(--gl); }
 
     .lab-card--mr:hover {
       box-shadow: 0 20px 60px rgba(217, 119, 6, 0.12);
@@ -803,6 +819,10 @@
     .lab-card--om:hover {
       box-shadow: 0 20px 60px rgba(124, 58, 237, 0.12);
       background: var(--om-surface);
+    }
+    .lab-card--gl:hover {
+      box-shadow: 0 20px 60px rgba(244, 63, 94, 0.12);
+      background: var(--gl-surface);
     }
 
     .lab-card__badge {
@@ -858,6 +878,10 @@
       background: var(--om-muted);
       color: var(--om);
     }
+    .lab-card--gl .lab-card__badge {
+      background: var(--gl-muted);
+      color: var(--gl);
+    }
 
     .lab-card__icon {
       width: 56px;
@@ -878,6 +902,7 @@
     .lab-card--mr .lab-card__icon { background: var(--mr-muted); }
     .lab-card--cd .lab-card__icon { background: var(--cd-muted); }
     .lab-card--om .lab-card__icon { background: var(--om-muted); }
+    .lab-card--gl .lab-card__icon { background: var(--gl-muted); }
 
     .lab-card__icon svg {
       width: 28px;
@@ -891,6 +916,7 @@
     .lab-card--mr .lab-card__icon svg { stroke: var(--mr); }
     .lab-card--cd .lab-card__icon svg { stroke: var(--cd); }
     .lab-card--om .lab-card__icon svg { stroke: var(--om); }
+    .lab-card--gl .lab-card__icon svg { stroke: var(--gl); }
 
     .lab-card h3 {
       font-size: 1.4rem;
@@ -940,6 +966,7 @@
     .lab-card--mr .lab-card__chip { background: var(--mr-muted); color: var(--mr); }
     .lab-card--cd .lab-card__chip { background: var(--cd-muted); color: var(--cd); }
     .lab-card--om .lab-card__chip { background: var(--om-muted); color: var(--om); }
+    .lab-card--gl .lab-card__chip { background: var(--gl-muted); color: var(--gl); }
 
     .lab-card__cta {
       font-weight: 600;
@@ -953,6 +980,7 @@
     .lab-card--mr .lab-card__cta { color: var(--mr); }
     .lab-card--cd .lab-card__cta { color: var(--cd); }
     .lab-card--om .lab-card__cta { color: var(--om); }
+    .lab-card--gl .lab-card__cta { color: var(--gl); }
 
     .lab-card__cta svg {
       width: 16px;
@@ -1382,6 +1410,7 @@
     .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
     .reveal-stagger > .reveal:nth-child(2) { transition-delay: 120ms; }
     .reveal-stagger > .reveal:nth-child(3) { transition-delay: 240ms; }
+    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 360ms; }
 
     /* ============================================
        15. MOBILE
