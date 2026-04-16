@@ -1,0 +1,7 @@
+{
+  "name": "Cascade - Daily Terrain Puzzle", "short_name": "Cascade",
+  "description": "Navigate the terrain. Find the longest river.",
+  "start_url": "/gamelab/cascade/", "scope": "/gamelab/cascade/", "display": "standalone",
+  "background_color": "#F5F2EB", "theme_color": "#4A9BD9", "orientation": "portrait",
+  "icons": [{ "src": "/gamelab/cascade/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" }, { "src": "/gamelab/cascade/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }]
+}

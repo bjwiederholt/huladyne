@@ -101,8 +101,17 @@
       transform: translateY(-2px);
     }
 
+    .game-card--ripple { border-top-color: #D4A843; }
+    .game-card--ripple:hover { box-shadow: 0 8px 30px rgba(212, 168, 67, 0.15); }
+
+    .game-card--duet { border-top-color: #C49050; }
+    .game-card--duet:hover { box-shadow: 0 8px 30px rgba(196, 144, 80, 0.15); }
+
     .game-card--signal { border-top-color: #00d4ff; }
     .game-card--signal:hover { box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+
+    .game-card--cascade { border-top-color: #4A9BD9; }
+    .game-card--cascade:hover { box-shadow: 0 8px 30px rgba(74, 155, 217, 0.15); }
 
     .game-card--fuse { border-top-color: #f59e0b; }
     .game-card--fuse:hover { box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15); }
@@ -113,8 +122,16 @@
       margin-bottom: 0.3rem;
     }
 
+    .game-card--ripple .game-card__name { color: #D4A843; }
+    .game-card--duet .game-card__name { color: #C49050; }
     .game-card--signal .game-card__name { color: #00d4ff; }
+    .game-card--cascade .game-card__name { color: #4A9BD9; }
     .game-card--fuse .game-card__name { color: #f59e0b; }
+
+    .game-card__status--live {
+      color: #C49050;
+      text-transform: uppercase;
+    }
 
     .game-card__desc {
       font-size: 0.9rem;
@@ -178,6 +195,21 @@
   </section>
 
   <section class="games">
+    <a href="/gamelab/ripple/" class="game-card game-card--ripple">
+      <div class="game-card__name">Ripple</div>
+      <p class="game-card__desc">Drop stones. Watch waves. Match the pattern.</p>
+      <div class="game-card__status game-card__status--live">Play now</div>
+    </a>
+    <a href="/gamelab/duet/" class="game-card game-card--duet">
+      <div class="game-card__name">Duet</div>
+      <p class="game-card__desc">One grid. Two maps. Find the harmony.</p>
+      <div class="game-card__status game-card__status--live">Play now</div>
+    </a>
+    <a href="/gamelab/cascade/" class="game-card game-card--cascade">
+      <div class="game-card__name">Cascade</div>
+      <p class="game-card__desc">Navigate the terrain. Find the longest river.</p>
+      <div class="game-card__status game-card__status--live">Play now</div>
+    </a>
     <a href="#" class="game-card game-card--signal">
       <div class="game-card__name">Signal</div>
       <p class="game-card__desc">Find the hidden words. Trace the signal.</p>
