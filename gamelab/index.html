@@ -107,14 +107,11 @@
     .game-card--duet { border-top-color: #C49050; }
     .game-card--duet:hover { box-shadow: 0 8px 30px rgba(196, 144, 80, 0.15); }
 
-    .game-card--signal { border-top-color: #00d4ff; }
-    .game-card--signal:hover { box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15); }
+    .game-card--fault { border-top-color: #8B7355; }
+    .game-card--fault:hover { box-shadow: 0 8px 30px rgba(139, 115, 85, 0.15); }
 
     .game-card--cascade { border-top-color: #4A9BD9; }
     .game-card--cascade:hover { box-shadow: 0 8px 30px rgba(74, 155, 217, 0.15); }
-
-    .game-card--fuse { border-top-color: #f59e0b; }
-    .game-card--fuse:hover { box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15); }
 
     .game-card__name {
       font-size: 1.3rem;
@@ -124,9 +121,8 @@
 
     .game-card--ripple .game-card__name { color: #D4A843; }
     .game-card--duet .game-card__name { color: #C49050; }
-    .game-card--signal .game-card__name { color: #00d4ff; }
+    .game-card--fault .game-card__name { color: #8B7355; }
     .game-card--cascade .game-card__name { color: #4A9BD9; }
-    .game-card--fuse .game-card__name { color: #f59e0b; }
 
     .game-card__status--live {
       color: #C49050;
@@ -208,6 +204,11 @@
     <a href="/gamelab/cascade/" class="game-card game-card--cascade">
       <div class="game-card__name">Cascade</div>
       <p class="game-card__desc">Navigate the terrain. Find the longest river.</p>
+      <div class="game-card__status game-card__status--live">Play now</div>
+    </a>
+    <a href="/gamelab/fault/" class="game-card game-card--fault">
+      <div class="game-card__name">Fault</div>
+      <p class="game-card__desc">Draw the lines. Split the numbers. Build today's pattern.</p>
       <div class="game-card__status game-card__status--live">Play now</div>
     </a>
   </section>
