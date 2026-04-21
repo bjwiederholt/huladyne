@@ -2,64 +2,70 @@
        1. FOUNDATION — Variables, Reset, Base
        ============================================ */
     :root {
-      --brand: #4f6df5;
-      --brand-light: #818cf8;
-      --brand-muted: rgba(79, 109, 245, 0.08);
-      --dark: #0f172a;
-      --dark-2: #1e293b;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-200: #e2e8f0;
-      --gray-400: #94a3b8;
-      --gray-600: #475569;
-      --gray-700: #334155;
-      --gray-800: #1e293b;
-      --white: #ffffff;
-      --mr: #d97706;
-      --mr-light: #fbbf24;
-      --mr-muted: rgba(217, 119, 6, 0.08);
-      --mr-surface: #fffbeb;
-      --cd: #0d9488;
-      --cd-light: #2dd4bf;
-      --cd-muted: rgba(13, 148, 136, 0.08);
-      --cd-surface: #f0fdfa;
-      --om: #7c3aed;
-      --om-light: #a78bfa;
-      --om-muted: rgba(124, 58, 237, 0.08);
-      --om-surface: #f5f3ff;
-      --gl: #f43f5e;
-      --gl-light: #fb7185;
-      --gl-muted: rgba(244, 63, 94, 0.08);
-      --gl-surface: #fff1f2;
-      --lab-glow: rgba(79, 109, 245, 0.15);
-      --neon-blue: #00d4ff;
-      --neon-purple: #a855f7;
+        /* ---------- Brand (Hulabot Blue) ---------- */
+        --brand:         #4f6df5;
+        --brand-light:   #818cf8;
+        --brand-muted:   rgba(79, 109, 245, 0.08);
+        --neon-blue:     #00d4ff;
+        --neon-purple:   #a855f7;
 
-      /* Spring physics timing (Comeau) */
-      --spring-bounce: linear(
-        0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141, 0.191, 0.25,
-        0.316, 0.391, 0.473, 0.562, 0.658, 0.76, 0.868, 0.982,
-        1.101, 1.166, 1.209, 1.215, 1.199, 1.165, 1.122, 1.075,
-        1.031, 0.996, 0.973, 0.961, 0.96, 0.966, 0.979, 0.993,
-        1.004, 1.011, 1.013, 1.011, 1.006, 1.002, 0.999, 1
-      );
-      --spring-snappy: linear(
-        0, 0.009, 0.035, 0.078, 0.141, 0.223, 0.326, 0.45,
-        0.594, 0.757, 0.938, 1.036, 1.089, 1.107, 1.098,
-        1.071, 1.037, 1.005, 0.983, 0.972, 0.972, 0.981,
-        0.993, 1.003, 1.008, 1.008, 1.004, 1
-      );
+        /* ---------- Product Accents (scoped per product) ---------- */
+        --mr:         #d97706;   --mr-light:   #fbbf24;
+        --mr-muted:   rgba(217, 119, 6, 0.08);   --mr-surface: #fffbeb;
+
+        --cd:         #0d9488;   --cd-light:   #2dd4bf;
+        --cd-muted:   rgba(13, 148, 136, 0.08);  --cd-surface: #f0fdfa;
+
+        --om:         #7c3aed;   --om-light:   #a78bfa;
+        --om-muted:   rgba(124, 58, 237, 0.08);  --om-surface: #f5f3ff;
+
+        --gl:         #f43f5e;   --gl-light:   #fb7185;
+        --gl-muted:   rgba(244, 63, 94, 0.08);   --gl-surface: #fff1f2;
+
+        /* ---------- Neutrals (slate) ---------- */
+        --dark:    #0f172a;
+        --dark-2:  #1e293b;
+        --gray-50:  #f8fafc;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-400: #94a3b8;
+        --gray-600: #475569;
+        --gray-700: #334155;
+        --gray-800: #1e293b;
+        --white:   #ffffff;
+        --lab-glow: rgba(79, 109, 245, 0.15);
+
+        /* ---------- Type ----------
+           Brand font: Switzer (Fontshare, free). Loaded via <link> in index.html <head>.
+           System stack remains as fallback. */
+        --font-sans: 'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, 'Helvetica Neue', sans-serif;
+
+        /* ---------- Spring physics timing (unchanged) ---------- */
+        --spring-bounce: linear(
+                0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141, 0.191, 0.25,
+                0.316, 0.391, 0.473, 0.562, 0.658, 0.76, 0.868, 0.982,
+                1.101, 1.166, 1.209, 1.215, 1.199, 1.165, 1.122, 1.075,
+                1.031, 0.996, 0.973, 0.961, 0.96, 0.966, 0.979, 0.993,
+                1.004, 1.011, 1.013, 1.011, 1.006, 1.002, 0.999, 1
+        );
+        --spring-snappy: linear(
+                0, 0.009, 0.035, 0.078, 0.141, 0.223, 0.326, 0.45,
+                0.594, 0.757, 0.938, 1.036, 1.089, 1.107, 1.098,
+                1.071, 1.037, 1.005, 0.983, 0.972, 0.972, 0.981,
+                0.993, 1.003, 1.008, 1.004, 1
+        );
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      color: var(--gray-800);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      background: var(--dark);
+        font-family: var(--font-sans);
+        color: var(--gray-800);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        background: var(--dark);
     }
 
     /* Aurora atmosphere (Bruno) */
