@@ -113,6 +113,14 @@
     .game-card--cascade { border-top-color: #4A9BD9; }
     .game-card--cascade:hover { box-shadow: 0 8px 30px rgba(74, 155, 217, 0.15); }
 
+    .game-card--soon {
+      border-top-style: dashed;
+      border-top-color: #64748b;
+      opacity: 0.8;
+      cursor: default;
+    }
+    .game-card--soon:hover { transform: none; }
+
     .game-card__name {
       font-size: 1.3rem;
       font-weight: 700;
@@ -123,10 +131,17 @@
     .game-card--duet .game-card__name { color: #C49050; }
     .game-card--fault .game-card__name { color: #8B7355; }
     .game-card--cascade .game-card__name { color: #4A9BD9; }
+    .game-card--soon .game-card__name { color: #94a3b8; }
 
     .game-card__status--live {
       color: #C49050;
       text-transform: uppercase;
+    }
+
+    .game-card__status--soon {
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .game-card__desc {
@@ -196,6 +211,11 @@
       <p class="game-card__desc">Navigate the terrain. Find the longest river.</p>
       <div class="game-card__status game-card__status--live">Play now</div>
     </a>
+    <div class="game-card game-card--soon">
+      <div class="game-card__name">More coming</div>
+      <p class="game-card__desc">More puzzles cooking in the lab. They'll ship when they stop breaking.</p>
+      <div class="game-card__status game-card__status--soon">In development</div>
+    </div>
     <!-- Hidden until ready
     <a href="/gamelab/ripple/" class="game-card game-card--ripple">
       <div class="game-card__name">Ripple</div>
