@@ -19,7 +19,21 @@
       "Bash(python3:*)",
       "WebFetch(domain:www.joshwcomeau.com)",
       "WebFetch(domain:bruno-simon.com)",
-      "WebFetch(domain:www.jhey.dev)"
+      "WebFetch(domain:www.jhey.dev)",
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Bash(xargs ls:*)",
+      "Bash(identify /Users/brad/development/huladyne/HD_robot.png)",
+      "WebFetch(domain:bradwiederholt.com)",
+      "Bash(curl -s -o /dev/null -w \"HTTP Status: %{http_code}\\\\nSize: %{size_download} bytes\\\\n\" http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"CSS Status: %{http_code}\\\\nCSS Size: %{size_download} bytes\\\\n\" http://localhost:8080/styles.css)",
+      "Bash(curl -s -o /dev/null -w \"JS Status: %{http_code}\\\\nJS Size: %{size_download} bytes\\\\n\" http://localhost:8080/main.js)",
+      "Bash(kill %1)",
+      "Read(//Users/brad/development/**)",
+      "Bash(find . -path \"*/ommlo*\" -name \"*.svg\")",
+      "Read(//Users/brad/**)",
+      "Bash(find . -maxdepth 3 -name \"*ommlo*\" -type d)",
+      "Bash(find . -path \"*/Ommlo*\" -name \"*.svg\")",
+      "Bash([ -f \"$d/index.html\" ])"
     ]
   }
 }
