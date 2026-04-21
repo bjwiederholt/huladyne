@@ -176,7 +176,12 @@
         robot.style.filter = `drop-shadow(${sx}px ${sy}px 24px rgba(79, 109, 245, 0.3))`;
 
         const still = Math.abs(targetRX - curRX) < 0.01 && Math.abs(targetRY - curRY) < 0.01;
-        if (still && !robotMouseInHero) { rafId = null; return; }
+        if (still && !robotMouseInHero) {
+          robot.style.transform = '';
+          robot.style.filter = '';
+          rafId = null;
+          return;
+        }
         rafId = requestAnimationFrame(animateRobot);
       }
 
@@ -251,7 +256,7 @@
       // ==============================================
       // 7. ROBOT SCROLL REACTION (Comeau)
       // ==============================================
-      let wasInHero = true;
+      let wasInHero = false;
       const heroObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting && !wasInHero) {
