@@ -39,8 +39,6 @@
           // Stamp flash + screen shake for lab cards emerging from factory
           if (entry.target.classList.contains('lab-card')) {
             entry.target.classList.add('stamp-flash');
-            var productsEl = document.getElementById('products');
-            if (productsEl) { productsEl.classList.add('stamp-shake'); setTimeout(function() { productsEl.classList.remove('stamp-shake'); }, 300); }
             setTimeout(() => entry.target.classList.remove('stamp-flash'), 600);
           }
           // Trigger SVG draw-on for children
@@ -272,69 +270,15 @@
       heroObs.observe(hero);
 
       // ==============================================
-      // 8. 3D CARD TILT ENGINE (Bruno)
+      // 8. CARD GLOSS MOUSE TRACKING
       // ==============================================
-      class CardTilt {
-        constructor(el) {
-          this.el = el;
-          this.maxTilt = 10;
-          this.currentRX = 0; this.currentRY = 0;
-          this.targetRX = 0; this.targetRY = 0;
-          this.velX = 0; this.velY = 0;
-          this.stiffness = 0.08;
-          this.damping = 0.72;
-          this.isHovered = false;
-          this.raf = null;
-
-          this.el.addEventListener('mouseenter', () => this.onEnter());
-          this.el.addEventListener('mousemove', (e) => this.onMove(e));
-          this.el.addEventListener('mouseleave', () => this.onLeave());
-        }
-
-        onEnter() {
-          this.isHovered = true;
-          if (!this.raf) this.animate();
-        }
-
-        onMove(e) {
-          const r = this.el.getBoundingClientRect();
-          const nx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-          const ny = ((e.clientY - r.top) / r.height - 0.5) * 2;
-          this.targetRY = nx * this.maxTilt;
-          this.targetRX = -ny * this.maxTilt;
-          this.el.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
-          this.el.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
-        }
-
-        onLeave() {
-          this.isHovered = false;
-          this.targetRX = 0;
-          this.targetRY = 0;
-        }
-
-        animate() {
-          const fx = this.stiffness * (this.targetRX - this.currentRX);
-          const fy = this.stiffness * (this.targetRY - this.currentRY);
-          this.velX += fx; this.velY += fy;
-          this.velX *= this.damping; this.velY *= this.damping;
-          this.currentRX += this.velX; this.currentRY += this.velY;
-
-          this.el.style.transform = `rotateX(${this.currentRX}deg) rotateY(${this.currentRY}deg) scale3d(1.02, 1.02, 1.02)`;
-
-          const settled = Math.abs(this.velX) < 0.01 && Math.abs(this.velY) < 0.01
-            && Math.abs(this.targetRX - this.currentRX) < 0.01;
-
-          if (!this.isHovered && settled) {
-            this.currentRX = 0; this.currentRY = 0;
-            this.el.style.transform = '';
-            this.raf = null;
-            return;
-          }
-          this.raf = requestAnimationFrame(() => this.animate());
-        }
-      }
-
-      document.querySelectorAll('.lab-card, .service-card').forEach(el => new CardTilt(el));
+      document.querySelectorAll('.lab-card, .service-card').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+          const r = el.getBoundingClientRect();
+          el.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+          el.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+        });
+      });
 
       // ==============================================
       // 9. CARD ICON HOVER RE-DRAW (Drasner)
