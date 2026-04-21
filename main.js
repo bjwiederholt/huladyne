@@ -127,7 +127,6 @@
 
       hero.addEventListener('mouseenter', () => {
         robotMouseInHero = true;
-        robot.style.animationPlayState = 'paused';
       });
 
       hero.addEventListener('mousemove', (e) => {
@@ -154,13 +153,6 @@
         hero.style.setProperty('--hero-mx', '0px');
         hero.style.setProperty('--hero-my', '0px');
         if (!rafId) rafId = requestAnimationFrame(animateRobot);
-        setTimeout(() => {
-          if (!robotMouseInHero) {
-            robot.style.transform = '';
-            robot.style.filter = '';
-            robot.style.animationPlayState = 'running';
-          }
-        }, 400);
       });
 
       function animateRobot() {
@@ -176,7 +168,7 @@
         robot.style.filter = `drop-shadow(${sx}px ${sy}px 24px rgba(79, 109, 245, 0.3))`;
 
         const still = Math.abs(targetRX - curRX) < 0.01 && Math.abs(targetRY - curRY) < 0.01;
-        if (still && !robotMouseInHero) {
+        if (still) {
           robot.style.transform = '';
           robot.style.filter = '';
           rafId = null;
@@ -203,13 +195,11 @@
 
         if (!isSpinning) {
           isSpinning = true;
-          this.style.animationPlayState = 'running';
           this.style.animation = 'none';
           this.offsetHeight;
           this.style.animation = 'robot-spin 0.6s ease-in-out';
           setTimeout(() => {
-            this.style.animation = 'robot-alive 3s ease-in-out infinite';
-            if (robotMouseInHero) this.style.animationPlayState = 'paused';
+            this.style.animation = '';
             isSpinning = false;
           }, 700);
         }
@@ -235,7 +225,6 @@
 
       robot.addEventListener('mouseenter', () => {
         hoverTimer = setTimeout(() => {
-          robot.style.animationPlayState = 'running';
           robot.style.animation = 'none';
           robot.offsetHeight;
           robot.style.animation = 'robot-hula-dance 2s var(--spring-bounce)';
@@ -244,8 +233,7 @@
             bubble.classList.add('show');
           }
           setTimeout(() => {
-            robot.style.animation = 'robot-alive 3s ease-in-out infinite';
-            if (robotMouseInHero) robot.style.animationPlayState = 'paused';
+            robot.style.animation = '';
           }, 2000);
           setTimeout(() => { if (bubble) bubble.classList.remove('show'); }, 3000);
         }, 3000);
@@ -265,7 +253,7 @@
             robot.offsetHeight;
             robot.style.animation = 'robot-welcome 0.5s var(--spring-bounce)';
             setTimeout(() => {
-              robot.style.animation = 'robot-alive 3s ease-in-out infinite';
+              robot.style.animation = '';
             }, 500);
           } else if (!entry.isIntersecting) {
             wasInHero = false;
