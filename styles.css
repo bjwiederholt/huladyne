@@ -498,14 +498,8 @@
     /* ============================================
        5. 3D CARD SYSTEM (Bruno)
        ============================================ */
-    .lab-cards,
-    .services-grid {
-      perspective: 1000px;
-    }
-
     .lab-card,
     .service-card {
-      transform-style: preserve-3d;
       will-change: transform;
       position: relative;
     }
@@ -638,52 +632,53 @@
     /* Card emerge-from-machine animation */
     .lab-card.reveal {
       opacity: 0;
-      transform: translateY(60px) scale(0.7) rotate(-3deg);
-      transition: opacity 0.5s ease, transform 0.8s var(--spring-bounce);
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .lab-card.reveal.revealed {
       opacity: 1;
-      transform: translateY(0) scale(1) rotate(0deg);
+      transform: translateY(0);
     }
 
-    /* Card at-rest animations (Bruno) */
-    .lab-card--mr {
-      animation: card-float 6s ease-in-out infinite, card-glow-mr 4s ease-in-out infinite;
+    /* Card at-rest glow pulse — opacity-only on a pseudo-element so the compositor handles it. */
+    .lab-card--mr { --glow-rgb: 217, 119, 6; }
+    .lab-card--cd { --glow-rgb: 13, 148, 136; }
+    .lab-card--om { --glow-rgb: 124, 58, 237; }
+    .lab-card--gl { --glow-rgb: 244, 63, 94; }
+
+    .lab-card--mr::before,
+    .lab-card--cd::before,
+    .lab-card--om::before,
+    .lab-card--gl::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow:
+        0 4px 30px rgba(var(--glow-rgb), 0.12),
+        0 0 60px rgba(var(--glow-rgb), 0.05);
+      opacity: 0;
+      pointer-events: none;
+      will-change: opacity;
+      animation: card-glow-pulse 4s ease-in-out infinite;
     }
-    .lab-card--cd {
-      animation: card-float 6s ease-in-out infinite -2s, card-glow-cd 4s ease-in-out infinite -1.5s;
-    }
-    .lab-card--om {
-      animation: card-float 6s ease-in-out infinite -4s, card-glow-om 4s ease-in-out infinite -3s;
-    }
-    .lab-card--gl {
-      animation: card-float 6s ease-in-out infinite -1s, card-glow-gl 4s ease-in-out infinite -0.5s;
+    .lab-card--cd::before { animation-delay: -1.5s; }
+    .lab-card--om::before { animation-delay: -3s; }
+    .lab-card--gl::before { animation-delay: -0.5s; }
+
+    @keyframes card-glow-pulse {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
     }
 
-    @keyframes card-float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-4px); }
-    }
-
-    @keyframes card-glow-mr {
-      0%, 100% { box-shadow: 0 2px 20px rgba(217, 119, 6, 0); }
-      50% { box-shadow: 0 4px 30px rgba(217, 119, 6, 0.12), 0 0 60px rgba(217, 119, 6, 0.05); }
-    }
-
-    @keyframes card-glow-cd {
-      0%, 100% { box-shadow: 0 2px 20px rgba(13, 148, 136, 0); }
-      50% { box-shadow: 0 4px 30px rgba(13, 148, 136, 0.12), 0 0 60px rgba(13, 148, 136, 0.05); }
-    }
-
-    @keyframes card-glow-om {
-      0%, 100% { box-shadow: 0 2px 20px rgba(124, 58, 237, 0); }
-      50% { box-shadow: 0 4px 30px rgba(124, 58, 237, 0.12), 0 0 60px rgba(124, 58, 237, 0.05); }
-    }
-
-    @keyframes card-glow-gl {
-      0%, 100% { box-shadow: 0 2px 20px rgba(244, 63, 94, 0); }
-      50% { box-shadow: 0 4px 30px rgba(244, 63, 94, 0.12), 0 0 60px rgba(244, 63, 94, 0.05); }
+    @media (prefers-reduced-motion: reduce) {
+      .lab-card--mr::before,
+      .lab-card--cd::before,
+      .lab-card--om::before,
+      .lab-card--gl::before {
+        animation: none;
+      }
     }
 
     /* Stamp flash on emerge */
@@ -842,10 +837,9 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       transition: transform 0.4s var(--spring-snappy);
-      transform: translateZ(30px);
     }
 
-    .lab-card:hover .lab-card__badge { transform: translateZ(30px) scale(1.05); }
+    .lab-card:hover .lab-card__badge { transform: scale(1.05); }
 
     .lab-card--mr .lab-card__badge {
       background: var(--mr-muted);
@@ -898,11 +892,10 @@
       justify-content: center;
       margin-bottom: 1.25rem;
       transition: transform 0.4s var(--spring-bounce);
-      transform: translateZ(20px);
     }
 
     .lab-card:hover .lab-card__icon {
-      transform: translateZ(20px) scale(1.15) rotate(-5deg);
+      transform: scale(1.15) rotate(-5deg);
     }
 
     .lab-card--mr .lab-card__icon { background: var(--mr-muted); }
@@ -930,10 +923,9 @@
       color: var(--dark);
       margin-bottom: 0.25rem;
       transition: transform 0.35s var(--spring-bounce);
-      transform: translateZ(15px);
     }
 
-    .lab-card:hover h3 { transform: translateZ(15px) translateX(3px); }
+    .lab-card:hover h3 { transform: translateX(3px); }
 
     .lab-card__tagline {
       font-size: 0.95rem;
@@ -980,7 +972,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      transform: translateZ(15px);
     }
 
     .lab-card--mr .lab-card__cta { color: var(--mr); }
@@ -1131,10 +1122,7 @@
       padding: 2.25rem;
       border: 1px solid var(--gray-200);
       transition: box-shadow 0.3s ease;
-      animation: card-float 7s ease-in-out infinite;
     }
-    .service-card:nth-child(2) { animation-delay: -2.3s; }
-    .service-card:nth-child(3) { animation-delay: -4.1s; }
 
     .service-card:hover {
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
