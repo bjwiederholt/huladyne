@@ -4,6 +4,13 @@ All notable user-facing changes to the Huladyne site are documented in this file
 
 Versions follow [Semantic Versioning](https://semver.org/). The site ships from `main` via Vercel; each release is tagged `vX.Y.Z`.
 
+## v3.15.10 — 2026-04-23
+
+### Gamelab
+- **Cascade v2.7.9** — the longest-path solver is now exact for every date in the manifest. The tighter bidirectional flood upper bound (intersecting forward-reachable-from-current with reverse-reachable-from-drain) closes the 8 plateau-heavy Hard puzzles that were still truncated in v3.15.9 — in under 4 seconds combined, vs. many hours with the old upper bound. The manifest now has zero `truncated: true` entries: all 1096 optima are proven exact.
+- **2026-05-01 Hard** bumped from 30 → 36 cells (proven optimum). This puzzle had been silently under-counted at a 20% margin since the v3.15.9 release; it was flagged truncated and is now closed.
+- **Internal consistency verified**: a new `scripts/backtest-optimals.js` regenerates every puzzle from seed and re-runs the solver, confirming 100% agreement with the stored manifest. Runs in about 3 minutes across all 1096 entries.
+
 ## v3.15.9 — 2026-04-23
 
 ### Gamelab
