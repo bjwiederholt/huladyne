@@ -4,6 +4,13 @@ All notable user-facing changes to the Huladyne site are documented in this file
 
 Versions follow [Semantic Versioning](https://semver.org/). The site ships from `main` via Vercel; each release is tagged `vX.Y.Z`.
 
+## v3.15.11 — 2026-04-23
+
+### Gamelab
+- **Weekly difficulty progression flipped** — Cascade now follows NYT/Wordle convention: Monday is the easiest day, progressively harder through the week, Saturday/Sunday are the hardest. Previously the terrain generation was inverted (smoother-weekday terrain required MORE cells to Perfect Flow than weekend terrain). Full-year average optimal cells Mon→Sun now climbs 22 → 26 across all difficulties; Hard climbs 26 → 33.
+- **Returning players can pick any difficulty from the intro screen.** First-timers still get guided through Easy → Medium → Hard as an onboarding ramp. Streak still requires Hard completion, so the commitment mechanic is unchanged — the difficulty you can *access* is different from the difficulty you need to *beat* to extend the streak.
+- **Copy refresh across the board.** Dropped the "gauntlet" vocabulary (the one combat word in a game full of water vocabulary). Tutorial step 4 is now "Three a day" instead of "The Daily Gauntlet." The all-done intro state reads "Today's flow is complete." The analytics event formerly named `gauntlet_finished` is now `day_completed` — dashboard update required.
+
 ## v3.15.10 — 2026-04-23
 
 ### Gamelab
