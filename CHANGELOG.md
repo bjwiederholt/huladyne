@@ -4,6 +4,11 @@ All notable user-facing changes to the Huladyne site are documented in this file
 
 Versions follow [Semantic Versioning](https://semver.org/). The site ships from `main` via Vercel; each release is tagged `vX.Y.Z`.
 
+## v3.15.13 — 2026-04-24
+
+### Gamelab
+- **Cascade v2.7.12** — iPhone layout polish. Tightens spacing around the grid on small screens and fixes a clipping bug where the compact grid could get cut off at the bottom edge on shorter iPhone viewports. Builds on the iOS Safari viewport work from v3.15.12.
+
 ## v3.15.12 — 2026-04-24
 
 ### Gamelab
