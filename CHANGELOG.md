@@ -4,6 +4,11 @@ All notable user-facing changes to the Huladyne site are documented in this file
 
 Versions follow [Semantic Versioning](https://semver.org/). The site ships from `main` via Vercel; each release is tagged `vX.Y.Z`.
 
+## v3.15.12 — 2026-04-24
+
+### Gamelab
+- **Cascade v2.7.11** — iOS Safari viewport fix. The grid and bottom controls no longer get clipped under the address bar on iOS Safari. Switched the game container from `100vh` to `100svh` (small viewport height, which accounts for the dynamic toolbar) and anchored the header as sticky so the puzzle doesn't drift when the toolbar shows/hides during play.
+
 ## v3.15.11 — 2026-04-23
 
 ### Gamelab
