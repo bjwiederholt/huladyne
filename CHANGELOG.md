@@ -4,6 +4,11 @@ All notable user-facing changes to the Huladyne site are documented in this file
 
 Versions follow [Semantic Versioning](https://semver.org/). The site ships from `main` via Vercel; each release is tagged `vX.Y.Z`.
 
+## v3.15.14 — 2026-04-25
+
+### Gamelab
+- **Cascade v2.7.13** — streak break now evaluated at play time (rather than passively overnight) and write verification added on streak persistence.
+
 ## v3.15.13 — 2026-04-24
 
 ### Gamelab
