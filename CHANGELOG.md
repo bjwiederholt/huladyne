@@ -4,6 +4,11 @@ All notable user-facing changes to the Huladyne site are documented in this file
 
 Versions follow [Semantic Versioning](https://semver.org/). The site ships from `main` via Vercel; each release is tagged `vX.Y.Z`.
 
+## v3.15.16 — 2026-05-01
+
+### Gamelab
+- **Cascade v2.7.15** — silent stale-streak heal at load. If a player's streak record is stale on app load (e.g., they didn't open Cascade yesterday), the streak now self-corrects quietly in the background instead of surfacing a streak-broken notification. No jump scares, no shaming — the state just reconciles.
+
 ## v3.15.15 — 2026-04-25
 
 ### Gamelab
